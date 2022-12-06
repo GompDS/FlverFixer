@@ -59,7 +59,7 @@ internal static class Program
             flverFile.Bytes = flver.Write();
         }
         
-        bnd.Write(args[0] + ".bak", game.Compression);
+        bndBackup.Write(args[0] + ".bak", game.Compression);
         bnd.Write(args[0], game.Compression);
     }
 }
