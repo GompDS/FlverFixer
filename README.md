@@ -1,5 +1,5 @@
 # FlverFixer
-A Tool built which will fix GX Lists and Buffer Layouts to make sure they match with the materials used by the flver meshes.
+A Tool which will fix GX Lists and Buffer Layouts to make sure they match with the materials used by the flver meshes.
 ### Supported Games
 - Dark Souls 3
 - Sekiro
