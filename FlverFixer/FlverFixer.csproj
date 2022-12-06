@@ -7,4 +7,23 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Reference Include="SoulsAssetPipeline">
+        <HintPath>Lib\SoulsAssetPipeline.dll</HintPath>
+      </Reference>
+      <Reference Include="SoulsFormats">
+        <HintPath>Lib\SoulsFormats.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <CopyRes Include="Res\*" />
+        <CopyHavokDowngrade Include="HavokDowngrade\**\**\*" />
+    </ItemGroup>
+
+    <Target Name="CopyRes" AfterTargets="AfterBuild">
+        <Copy SourceFiles="@(CopyRes)" DestinationFolder="bin\Debug\net6.0\Res" />
+        <Copy SourceFiles="@(CopyRes)" DestinationFolder="bin\Release\net6.0\Res" />
+    </Target>
+
 </Project>

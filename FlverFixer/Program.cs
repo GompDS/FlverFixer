@@ -1,8 +1,8 @@
-﻿using DS3FlverFixer.Util;
+﻿using FlverFixer.Util;
 using SoulsAssetPipeline.FLVERImporting;
 using SoulsFormats;
 
-namespace DS3FlverFixer;
+namespace FlverFixer;
 
 internal static class Program
 {

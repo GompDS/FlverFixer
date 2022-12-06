@@ -1,7 +1,7 @@
 using SoulsAssetPipeline.FLVERImporting;
 using SoulsFormats;
 
-namespace DS3FlverFixer;
+namespace FlverFixer;
 
 public class Game
 {
