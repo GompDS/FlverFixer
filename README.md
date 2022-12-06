@@ -11,3 +11,4 @@ It will not create a new dcx, the original dcx will be replaced.
 - **TKGP/JKAnderson:** SoulsFormats
 - **Meowmaritus:** SoulsAssetPipeline and Material Info Bank
 - **The12thAvenger:** Methods from his FbxImporter tool
+- **Nordagen:** Helped me get the ER and Sekiro Material info banks
