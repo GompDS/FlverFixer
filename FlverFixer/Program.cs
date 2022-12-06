@@ -10,6 +10,7 @@ internal static class Program
     {
         if (!BND4.Is(args[0])) throw new ArgumentException("Only BND4 is supported.");
         BND4 bnd = BND4.Read(args[0]);
+        BND4 bndBackup = BND4.Read(args[0]);
         
         Game game = new(bnd);
 
@@ -57,7 +58,8 @@ internal static class Program
             
             flverFile.Bytes = flver.Write();
         }
-            
+        
+        bnd.Write(args[0] + ".bak", game.Compression);
         bnd.Write(args[0], game.Compression);
     }
 }
