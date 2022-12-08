@@ -31,8 +31,8 @@ internal static class Program
                 {
                     flver.GXLists.Add(gxList);
                 }
-			    
-                foreach (var mat in flver.Materials.Where(x => x.MTD.Equals(distinctMat.MTD)))
+
+                foreach (FLVER2.Material? mat in flver.Materials.Where(x => Path.GetFileName(x.MTD).ToLower().EndsWith(Path.GetFileName(distinctMat.MTD).ToLower())))
                 {
                     mat.GXIndex = flver.GXLists.Count - 1;
                 }
@@ -54,8 +54,11 @@ internal static class Program
                 mesh.Vertices = mesh.Vertices.Select(x => x.Pad(bufferLayouts)).ToList();
                 List<int> layoutIndices = flver.GetLayoutIndices(bufferLayouts);
                 mesh.VertexBuffers = layoutIndices.Select(x => new FLVER2.VertexBuffer(x)).ToList();
-                
-                mesh.Dynamic = Path.GetFileName(flverFile.Name).StartsWith("m", StringComparison.OrdinalIgnoreCase) ? (byte)0 : (byte)1;
+
+                if (!Path.GetFileName(flverFile.Name).StartsWith("o", StringComparison.OrdinalIgnoreCase))
+                {
+                    mesh.Dynamic = Path.GetFileName(flverFile.Name).StartsWith("m", StringComparison.OrdinalIgnoreCase) ? (byte)0 : (byte)1;
+                }
             }
             
             flverFile.Bytes = flver.Write();
